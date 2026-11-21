@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dp3hw8cuhq061"]
+[gd_scene format=3 uid="uid://dp3hw8cuhq061"]
 
 [ext_resource type="Texture2D" uid="uid://bcvn782vprxcd" path="res://Assets/Sprites/character_21_frame16x20.png" id="2_kne1u"]
 
@@ -96,7 +96,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_tda05")
 }],
-"loop": true,
+"loop": 1,
 "name": &"h_walk",
 "speed": 5.0
 }, {
@@ -110,7 +110,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_r657h")
 }],
-"loop": true,
+"loop": 1,
 "name": &"vd_walk",
 "speed": 5.0
 }, {
@@ -124,23 +124,38 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wt6go")
 }],
-"loop": true,
+"loop": 1,
 "name": &"vu_walk",
 "speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_djaev"]
 
-[node name="Player" type="Area2D"]
+[node name="Player" type="Area2D" unique_id=817940947]
 position = Vector2(292, 107)
 script = SubResource("GDScript_xhfnw")
 metadata/_edit_group_ = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2072820213]
 sprite_frames = SubResource("SpriteFrames_xmns8")
 animation = &"vd_walk"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=897047942]
 position = Vector2(0, 1)
 scale = Vector2(0.8, 0.6)
 shape = SubResource("CapsuleShape2D_djaev")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1832556268]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1268427325]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=787427594]
+sprite_frames = SubResource("SpriteFrames_xmns8")
+animation = &"vd_walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=2106105430]
+position = Vector2(0, 1)
+scale = Vector2(0.8, 0.6)
+shape = SubResource("CapsuleShape2D_djaev")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=847770273]
