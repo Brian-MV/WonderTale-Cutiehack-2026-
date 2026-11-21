@@ -1,0 +1,145 @@
+[gd_scene format=3 uid="uid://b35nj3kjcbvnx"]
+
+[ext_resource type="Texture2D" uid="uid://bcvn782vprxcd" path="res://Assets/Sprites/character_21_frame16x20.png" id="2_kne1u"]
+
+[sub_resource type="GDScript" id="GDScript_xhfnw"]
+script/source = "extends Area2D
+signal hit
+
+@export var speed = 400 # How fast the player will move (pixels/sec).
+var screen_size # Size of the game window.
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	screen_size = get_viewport_rect().size
+	
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	var velocity = Vector2.ZERO # The player's movement vector.
+	if Input.is_action_pressed(\"move_right\"):
+		velocity.x += 1
+	if Input.is_action_pressed(\"move_left\"):
+		velocity.x -= 1
+	if Input.is_action_pressed(\"move_down\"):
+		velocity.y += 1
+	if Input.is_action_pressed(\"move_up\"):
+		velocity.y -= 1
+
+	if velocity.length() > 0:
+		velocity = velocity.normalized() * speed
+		$AnimatedSprite2D.play()
+	else:
+		$AnimatedSprite2D.stop()
+		
+	position += velocity * delta
+	position = position.clamp(Vector2.ZERO, screen_size)
+	
+	if velocity.x != 0:
+		$AnimatedSprite2D.animation = \"h_walk\"
+		$AnimatedSprite2D.flip_v = false
+		# See the note below about the following boolean assignment.
+		$AnimatedSprite2D.flip_h = velocity.x > 0
+	elif velocity.y != 0:
+		$AnimatedSprite2D.animation = \"vu_walk\"
+		$AnimatedSprite2D.flip_v = velocity.y > 0
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e2u21"]
+atlas = ExtResource("2_kne1u")
+region = Rect2(0, 22, 16, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bss38"]
+atlas = ExtResource("2_kne1u")
+region = Rect2(16, 22, 16, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tda05"]
+atlas = ExtResource("2_kne1u")
+region = Rect2(32, 22, 16, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qn3nj"]
+atlas = ExtResource("2_kne1u")
+region = Rect2(0, 2, 16, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6pdb"]
+atlas = ExtResource("2_kne1u")
+region = Rect2(16, 2, 16, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r657h"]
+atlas = ExtResource("2_kne1u")
+region = Rect2(32, 2, 16, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0urt"]
+atlas = ExtResource("2_kne1u")
+region = Rect2(0, 62, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jfkdj"]
+atlas = ExtResource("2_kne1u")
+region = Rect2(16, 62, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wt6go"]
+atlas = ExtResource("2_kne1u")
+region = Rect2(32, 62, 16, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xmns8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e2u21")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bss38")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tda05")
+}],
+"loop": 1,
+"name": &"h_walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qn3nj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l6pdb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r657h")
+}],
+"loop": 1,
+"name": &"vd_walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f0urt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jfkdj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wt6go")
+}],
+"loop": 1,
+"name": &"vu_walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_djaev"]
+
+[node name="Player" type="Area2D" unique_id=1979718557]
+position = Vector2(292, 107)
+scale = Vector2(5, 5)
+script = SubResource("GDScript_xhfnw")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2129555679]
+sprite_frames = SubResource("SpriteFrames_xmns8")
+animation = &"h_walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1256482459]
+position = Vector2(0, 1)
+scale = Vector2(0.8, 0.6)
+shape = SubResource("CapsuleShape2D_djaev")
