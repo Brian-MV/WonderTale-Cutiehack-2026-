@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dfnoik2ptrcii"]
+
+[ext_resource type="Script" uid="uid://c4flvrga1xepd" path="res://start_screen.gd" id="1_pevhg"]
+[ext_resource type="Texture2D" uid="uid://c668l2ukj0hve" path="res://Assets/UI/wondertale.png" id="2_afy8x"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_pevhg"]
+
+[node name="StartScreen" type="Control" unique_id=807927640]
+layout_mode = 3
+anchor_left = 0.36900002
+anchor_top = 0.29900002
+anchor_right = 0.36900002
+anchor_bottom = 0.29900002
+offset_left = -425.088
+offset_top = -193.75201
+offset_right = -385.088
+offset_bottom = -153.75201
+script = ExtResource("1_pevhg")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=583184349]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_afy8x")
+expand_mode = 1
+
+[node name="StartButton" type="Button" parent="." unique_id=1472412925]
+layout_mode = 0
+offset_left = 328.0
+offset_top = 405.0
+offset_right = 838.0
+offset_bottom = 573.0
+icon = SubResource("CanvasTexture_pevhg")
