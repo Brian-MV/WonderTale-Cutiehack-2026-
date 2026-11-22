@@ -6,8 +6,6 @@ signal start_game
 
 func _ready():
 	start_button.pressed.connect(_on_start_button_pressed)
-	start_button.visible = false
-	await get_tree().create_timer(5.0).timeout
 	start_button.visible = true
 
 func _on_start_button_pressed():
