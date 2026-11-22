@@ -55,7 +55,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"walk",
-"speed": 5.0
+"speed": 3.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_djaev"]
@@ -63,15 +63,14 @@ radius = 14.0
 height = 46.0
 
 [node name="Bunny" type="CharacterBody2D" unique_id=2033998394]
+collision_layer = 512
+collision_mask = 0
 script = ExtResource("1_dvrf6")
-metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=837230468]
 sprite_frames = SubResource("SpriteFrames_xmns8")
 animation = &"walk"
-metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1361568994]
 position = Vector2(-2, 3)
 shape = SubResource("CapsuleShape2D_djaev")
-metadata/_edit_group_ = true
