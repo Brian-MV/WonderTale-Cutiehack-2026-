@@ -1,0 +1,14 @@
+[remap]
+
+importer="parley_dialogue_sequence_ast_1.1.0"
+type="Resource"
+uid="uid://cd7jl6emwpoja"
+path="res://.godot/imported/humpty_dialogue.ds-560746969a3b1ac5f4db02a5e7bc8e37.tres"
+
+[deps]
+
+source_file="res://dialogue_sequences/humpty_dialogue.ds"
+dest_files=["res://.godot/imported/humpty_dialogue.ds-560746969a3b1ac5f4db02a5e7bc8e37.tres"]
+
+[params]
+
