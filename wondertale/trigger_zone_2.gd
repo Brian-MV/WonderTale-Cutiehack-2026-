@@ -17,7 +17,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player") and not has_triggered:
 		has_triggered = true
 		ctx = ParleyContext.create(egg_dialogue)
-		
+		npc.start_moving()
 		# Capture the dialogue balloon node returned by Parley
 		var result: Node = Parley.run_dialogue(ctx, egg_dialogue)
 		
