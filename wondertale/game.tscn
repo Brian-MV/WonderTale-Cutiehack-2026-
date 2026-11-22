@@ -8,13 +8,10 @@
 [ext_resource type="Script" path="res://trigger_zone.gd" id="6_ryrav"]
 [ext_resource type="Script" path="res://trigger_zone_2.gd" id="7_eow3j"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_djaev"]
-size = Vector2(165, 20)
-
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ryrav"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xmns8"]
-size = Vector2(48.625046, 111.25003)
+size = Vector2(48.625046, 64.12498)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ryrav"]
 radius = 50.0
@@ -26,18 +23,12 @@ position = Vector2(-1, 7)
 
 [node name="Player2" parent="." groups=["player"] instance=ExtResource("2_feb5d")]
 material = SubResource("CanvasItemMaterial_ryrav")
-position = Vector2(167, 107)
-collision_layer = 18433
-collision_mask = 18433
+position = Vector2(167, 111)
+collision_mask = 257
 safe_margin = 1.0
 
-[node name="treeamends" parent="." unique_id=1814257329 instance=ExtResource("3_feb5d")]
-z_index = 4096
-position = Vector2(0, 7)
-
-[node name="Bunny" parent="treeamends" unique_id=2033998394 instance=ExtResource("5_ryrav")]
-z_as_relative = false
-position = Vector2(603, 175)
+[node name="Bunny" parent="." instance=ExtResource("5_ryrav")]
+position = Vector2(604, 189)
 scale = Vector2(0.8, 0.8)
 platform_floor_layers = 4278190080
 
@@ -60,8 +51,6 @@ position = Vector2(311, 206)
 
 [node name="TriggerZone2" type="Area2D" parent="EggHead" node_paths=PackedStringArray("npc")]
 position = Vector2(-5, 26.999992)
-collision_layer = 16385
-collision_mask = 16385
 script = ExtResource("7_eow3j")
 npc = NodePath("..")
 
