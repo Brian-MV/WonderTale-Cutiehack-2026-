@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cidqnod81ob6n"]
+[gd_scene load_steps=11 format=3 uid="uid://bpek3pdo8cf1h"]
 
 [ext_resource type="Script" uid="uid://pe7mcq4vsxw0" path="res://bunny.gd" id="1_dvrf6"]
 [ext_resource type="Texture2D" uid="uid://68agnvl67hjc" path="res://Assets/Sprites/CD-i - Alice in Wonderland - Non-Playable Characters - Non-Playable Characters.png" id="1_u834r"]
@@ -39,7 +39,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gs0sc")
 }],
-"loop": 1,
+"loop": true,
 "name": &"dance",
 "speed": 5.0
 }, {
@@ -53,7 +53,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5ecvt")
 }],
-"loop": 1,
+"loop": true,
 "name": &"walk",
 "speed": 3.0
 }]
@@ -62,15 +62,15 @@ animations = [{
 radius = 14.0
 height = 46.0
 
-[node name="Bunny" type="CharacterBody2D" unique_id=2033998394]
+[node name="Bunny" type="CharacterBody2D"]
 collision_layer = 512
 collision_mask = 0
 script = ExtResource("1_dvrf6")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=837230468]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_xmns8")
 animation = &"walk"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1361568994]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, 3)
 shape = SubResource("CapsuleShape2D_djaev")
