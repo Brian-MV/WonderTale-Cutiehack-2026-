@@ -16,7 +16,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="Wondertale"
 run/main_scene="uid://bflaqchml58oi"
-config/features=PackedStringArray("4.5", "Forward Plus")
+config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
@@ -56,4 +56,11 @@ move_right={
 
 [internationalization]
 
+locale/translations_pot_files=PackedStringArray("res://dialogue_sequences/humpty_dialogue.ds")
 locale/translations_pot_files=PackedStringArray("res://dialogue_sequences/new_dialogue.ds", "res://dialogue_sequences/hare_dialogue.ds")
+[parley]
+
+stores/character_store_path="uid://dkyuypgp4wyd5"
+
+
+
