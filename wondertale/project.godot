@@ -57,7 +57,10 @@ move_right={
 [internationalization]
 
 locale/translations_pot_files=PackedStringArray("res://dialogue_sequences/humpty_dialogue.ds")
-
+locale/translations_pot_files=PackedStringArray("res://dialogue_sequences/new_dialogue.ds", "res://dialogue_sequences/hare_dialogue.ds")
 [parley]
 
 stores/character_store_path="uid://dkyuypgp4wyd5"
+
+
+
