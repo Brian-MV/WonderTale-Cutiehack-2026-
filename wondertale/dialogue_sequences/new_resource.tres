@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="ParleyCharacterStore" load_steps=6 format=3 uid="uid://dkyuypgp4wyd5"]
+
+[ext_resource type="Script" uid="uid://cr1va2oab5tn5" path="res://addons/parley/models/character.gd" id="1_w4aau"]
+[ext_resource type="Script" uid="uid://cbi8x2vk7bku1" path="res://addons/parley/stores/character/character_store.gd" id="2_q344d"]
+
+[sub_resource type="Resource" id="Resource_1a7wl"]
+script = ExtResource("1_w4aau")
+id = "hare"
+name = "Mad Hare"
+
+[sub_resource type="Resource" id="Resource_p56i2"]
+script = ExtResource("1_w4aau")
+id = "Alice"
+name = "Alice"
+
+[sub_resource type="Resource" id="Resource_0sud7"]
+script = ExtResource("1_w4aau")
+id = "Egg"
+name = "Humpty"
+
+[resource]
+script = ExtResource("2_q344d")
+characters = Array[ExtResource("1_w4aau")]([SubResource("Resource_1a7wl"), SubResource("Resource_p56i2"), SubResource("Resource_0sud7")])
