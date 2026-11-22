@@ -2,6 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://c83g0rcmqls35" path="res://map.tscn" id="1_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://qb1u47tqbffe" path="res://player_2.tscn" id="2_feb5d"]
+[ext_resource type="PackedScene" uid="uid://3jl740wipx4" path="res://treeamends.tscn" id="3_feb5d"]
+[ext_resource type="PackedScene" uid="uid://x7monh4c2j4h" path="res://egg_head.tscn" id="4_7jktm"]
+[ext_resource type="PackedScene" uid="uid://cidqnod81ob6n" path="res://bunny.tscn" id="5_ryrav"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ryrav"]
 
@@ -14,3 +17,13 @@ position = Vector2(-1, 7)
 material = SubResource("CanvasItemMaterial_ryrav")
 position = Vector2(167, 111)
 safe_margin = 1.0
+
+[node name="treeamends" parent="." unique_id=1814257329 instance=ExtResource("3_feb5d")]
+position = Vector2(0, 7)
+
+[node name="EggHead" parent="." unique_id=1372650443 instance=ExtResource("4_7jktm")]
+position = Vector2(317, 212)
+
+[node name="Bunny" parent="." unique_id=2033998394 instance=ExtResource("5_ryrav")]
+position = Vector2(26, 219)
+speed = null

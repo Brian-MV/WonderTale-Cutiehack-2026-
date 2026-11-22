@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://cidqnod81ob6n"]
+
+[ext_resource type="Script" uid="uid://pe7mcq4vsxw0" path="res://bunny.gd" id="1_dvrf6"]
+[ext_resource type="Texture2D" uid="uid://68agnvl67hjc" path="res://Assets/Sprites/CD-i - Alice in Wonderland - Non-Playable Characters - Non-Playable Characters.png" id="1_u834r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dvrf6"]
+atlas = ExtResource("1_u834r")
+region = Rect2(0, 0, 57, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4qck"]
+atlas = ExtResource("1_u834r")
+region = Rect2(57, 0, 57, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gs0sc"]
+atlas = ExtResource("1_u834r")
+region = Rect2(114, 0, 57, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g7ptr"]
+atlas = ExtResource("1_u834r")
+region = Rect2(171, 0, 57, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vonwv"]
+atlas = ExtResource("1_u834r")
+region = Rect2(228, 0, 57, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ecvt"]
+atlas = ExtResource("1_u834r")
+region = Rect2(285, 0, 57, 49)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xmns8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvrf6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e4qck")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gs0sc")
+}],
+"loop": 1,
+"name": &"dance",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g7ptr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vonwv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ecvt")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_djaev"]
+radius = 14.0
+height = 46.0
+
+[node name="Bunny" type="CharacterBody2D" unique_id=2033998394]
+script = ExtResource("1_dvrf6")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=837230468]
+sprite_frames = SubResource("SpriteFrames_xmns8")
+animation = &"walk"
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1361568994]
+position = Vector2(-2, 3)
+shape = SubResource("CapsuleShape2D_djaev")
+metadata/_edit_group_ = true
