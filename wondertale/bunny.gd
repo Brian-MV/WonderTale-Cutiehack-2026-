@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed: float = 80.0
+@export var speed: float = 40.0
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D # Change if using AnimationPlayer
 
 var is_moving: bool = false
@@ -8,11 +8,10 @@ var target_x: float = 0.0
 
 
 func _ready() -> void:
-	# Trigger automatically at start, or remove this line and call start_moving() from a signal/cutscene
-	start_moving()
+	pass
 
 func start_moving() -> void:
-	target_x = global_position.x + 100.0
+	target_x = global_position.x + 80.0
 	is_moving = true
 	anim.play("walk") # Replace with your actual animation name
 
