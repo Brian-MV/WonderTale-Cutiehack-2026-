@@ -15,5 +15,3 @@ dest_files=["res://addons/parley/locale/tooltip_translations.en.translation"]
 
 compress=true
 delimiter=0
-unescape_keys=false
-unescape_translations=true
