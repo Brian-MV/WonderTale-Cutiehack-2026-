@@ -7,7 +7,7 @@ var is_moving: bool = false
 var target_x: float = 0.0
 var dialogue_started: bool = false
 
-const basic_dialogue: ParleyDialogueSequenceAst = preload("res://dialogue_sequences/new_dialogue.ds")
+const basic_dialogue: ParleyDialogueSequenceAst = preload("res://dialogue_sequences/hare_dialogue.ds")
 
 var ctx: ParleyContext
 

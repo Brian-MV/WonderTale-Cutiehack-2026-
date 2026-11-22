@@ -56,4 +56,4 @@ move_right={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogue_sequences/new_dialogue.ds")
+locale/translations_pot_files=PackedStringArray("res://dialogue_sequences/new_dialogue.ds", "res://dialogue_sequences/hare_dialogue.ds")

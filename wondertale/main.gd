@@ -2,7 +2,7 @@ extends Node
 
 const START_SCREEN = preload("res://start_screen.tscn")
 const GAME = preload("res://game.tscn")
-const basic_dialogue: ParleyDialogueSequenceAst = preload("res://dialogue_sequences/new_dialogue.ds")
+const basic_dialogue: ParleyDialogueSequenceAst = preload("res://dialogue_sequences/hare_dialogue.ds")
 
 var start_screen
 
